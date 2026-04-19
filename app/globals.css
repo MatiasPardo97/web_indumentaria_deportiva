@@ -68,3 +68,22 @@ header{background:var(--s1);border-bottom:1px solid var(--b1);padding:.85rem 1.6
 #refm{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:300;align-items:center;justify-content:center}
 #refm img{max-width:92vw;max-height:92vh;border-radius:8px;object-fit:contain}
 @media(max-width:860px){.main{grid-template-columns:1fr}.viewer{border-right:none;border-bottom:1px solid var(--b1)}}
+
+/* Estilos para el Catalogo */
+.catalog-wrapper { padding: 0; min-height: 100vh; background: var(--bg); }
+.catalog-header { text-align: center; padding: 4rem 1rem 2rem; background: radial-gradient(circle at 50% -20%, var(--b2), var(--bg) 80%); border-bottom: 1px solid var(--b1); }
+.catalog-header .logo { font-size: 40px; margin-bottom: 0.5rem; }
+.catalog-header .subtitle { color: var(--muted); font-size: 14px; letter-spacing: 1px; }
+.catalog-container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+.catalog-title { font-family: 'Barlow Condensed'; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; color: var(--txt); margin-bottom: 2rem; border-left: 4px solid var(--acc); padding-left: 1rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+.product-card { display: flex; flex-direction: column; background: var(--s1); border: 1px solid var(--b1); border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.product-card:hover:not(.disabled) { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); border-color: var(--b2); }
+.product-card.disabled { opacity: 0.7; cursor: not-allowed; }
+.product-image { height: 260px; background: var(--s2); position: relative; display: flex; align-items: flex-end; padding: 1rem; }
+.product-1 { background: radial-gradient(circle, var(--s1) 0%, transparent 100%), url('/front.png'); background-size: cover; background-position: center; border-bottom: 1px solid var(--b1); }
+.pbadge { background: var(--acc); color: #000; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
+.product-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.product-info h2 { font-size: 18px; color: var(--txt); margin-bottom: 0.5rem; font-weight: 600; }
+.product-info p { font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; flex: 1; }
+.product-price { font-family: 'Barlow Condensed'; font-size: 14px; font-weight: 700; color: var(--acc); text-align: right; }

@@ -60,8 +60,8 @@ export default function Viewer3D() {
     
     // Crearemos un material frontal y uno trasero, mapeando las imágenes
     // Importante: Si la imagen no está en public/, arrojará error 404 de consola pero no romperá el código, se verá gris
-    const frontTexture = textureLoader.load('/front.jpg');
-    const backTexture = textureLoader.load('/back.jpg');
+    const frontTexture = textureLoader.load('/front.png');
+    const backTexture = textureLoader.load('/back.png');
 
     frontTexture.wrapS = THREE.RepeatWrapping;
     frontTexture.repeat.x = -1; // Ajuste para voltear si se ve en espejo
@@ -80,8 +80,8 @@ export default function Viewer3D() {
     const backGeom = new THREE.CylinderGeometry(4.1, 3.9, 8.1, 32, 1, true, Math.PI / 2, Math.PI);
     backGeom.scale(1, 1, 0.4);
 
-    const frontMesh = new THREE.Mesh(frontGeom, new THREE.MeshStandardMaterial({ map: frontTexture, side: THREE.DoubleSide }));
-    const backMesh = new THREE.Mesh(backGeom, new THREE.MeshStandardMaterial({ map: backTexture, side: THREE.DoubleSide }));
+    const frontMesh = new THREE.Mesh(frontGeom, new THREE.MeshStandardMaterial({ map: frontTexture, side: THREE.DoubleSide, transparent: true, alphaTest: 0.1, color: 0xffffff }));
+    const backMesh = new THREE.Mesh(backGeom, new THREE.MeshStandardMaterial({ map: backTexture, side: THREE.DoubleSide, transparent: true, alphaTest: 0.1, color: 0xffffff }));
     
     const petoGroup = new THREE.Group();
     petoGroup.add(frontMesh);
