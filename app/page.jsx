@@ -3,44 +3,42 @@ import Link from 'next/link';
 
 export default function Catalog() {
   return (
-    <div className="catalog-wrapper">
-      <header className="catalog-header">
-        <div className="logo">U<span>Custom</span>izable</div>
-        <p className="subtitle">Tu creatividad, tu rendimiento.</p>
-      </header>
+    <div>
+      <nav className="navbar">
+        <div className="logo">Pardoli</div>
+        {/* Espacio para Auth / User Profile */}
+      </nav>
       
-      <main className="catalog-container">
-        <h1 className="catalog-title">Catálogo Oficial</h1>
+      <main className="landing-container">
+        <section className="hero-section">
+          <h1 className="hero-title">EQUIPO SIN LÍMITES</h1>
+          <p className="hero-subtitle">Personaliza indumentaria deportiva de alto rendimiento para ti o para todo tu equipo. Diseñado por ti, fabricado por nosotros.</p>
+          <Link href="/producto/peto-femenino" className="cta-button">Empezar a Crear</Link>
+        </section>
         
-        <div className="product-grid">
+        <h2 className="section-title">Últimos Lanzamientos</h2>
+        <div className="catalog-grid">
           
-          <Link href="/producto/peto-femenino" className="product-card">
-            <div className="product-image product-1">
-              <span className="pbadge">Customizable 3D</span>
+          <Link href="/producto/peto-femenino" className="product-item">
+            <div className="product-image-container">
+               <div style={{ textAlign: 'center' }}>
+                 <div style={{ fontSize: '6rem', color: 'var(--text-primary)' }}>👕</div>
+                 <div style={{ marginTop: '1rem', fontSize: '12px', fontWeight: 700, letterSpacing: '1px' }}>CUSTOMIZABLE</div>
+               </div>
             </div>
-            <div className="product-info">
-              <h2>Peto Deportivo Femenino</h2>
-              <p>Diseño de Competición - UC Atletismo</p>
-              <div className="product-price">Ir al Diseñador ➔</div>
-            </div>
+            <h3>Peto Deportivo Femenino</h3>
+            <p>Alto rendimiento • Personalizable</p>
           </Link>
-          
-          <div className="product-card disabled">
-            <div className="product-image placeholder-image"></div>
-            <div className="product-info">
-              <h2>Shorts de Entrenamiento</h2>
-              <p>Clásico Ligero</p>
-              <div className="product-price">Próximamente</div>
+
+          <div className="product-item" style={{ opacity: 0.5, cursor: 'not-allowed' }}>
+            <div className="product-image-container">
+               <div style={{ textAlign: 'center' }}>
+                 <div style={{ fontSize: '6rem', filter: 'grayscale(1)' }}>🩳</div>
+                 <div style={{ marginTop: '1rem', fontSize: '12px', fontWeight: 700, letterSpacing: '1px' }}>PRÓXIMAMENTE</div>
+               </div>
             </div>
-          </div>
-          
-          <div className="product-card disabled">
-            <div className="product-image placeholder-image"></div>
-            <div className="product-info">
-              <h2>Polera Oficial UC</h2>
-              <p>Manga Corta - Competencia</p>
-              <div className="product-price">Próximamente</div>
-            </div>
+            <h3>Shorts de Entrenamiento</h3>
+            <p>Clásico Ligero</p>
           </div>
           
         </div>
